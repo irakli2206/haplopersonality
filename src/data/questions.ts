@@ -1,7 +1,7 @@
 import { HaplogroupWithMulitplier, QuizQuestion } from "../types";
 
 //Total sum of multipliers for each haplogroup must be numberOfQuestions * 5 / 2 + 5
-//30 for 10 questions
+//32.5 for 10 questions
 export const questions: QuizQuestion[] = [
     {
         question: 'Hitting your wife to instill fear and discipline is sometimes justified.',
@@ -151,6 +151,21 @@ export const questions: QuizQuestion[] = [
             { haplogroup: 'N', multiplier: 3 },
             { haplogroup: 'Q', multiplier: 4 },
             { haplogroup: 'E', multiplier: 3.5 },
+        ]
+    },
+    {
+        question: 'Women should be virgins until marriage.',
+        haplogroups: [
+            { haplogroup: 'J1', multiplier: 5 },
+            { haplogroup: 'J2', multiplier: 4 },
+            { haplogroup: 'I2', multiplier: 2 },
+            { haplogroup: 'I1', multiplier: 0 },
+            { haplogroup: 'R1b', multiplier: 1 },
+            { haplogroup: 'R1a', multiplier: 1 },
+            { haplogroup: 'G2a', multiplier: 3.5 },
+            { haplogroup: 'N', multiplier: 3 },
+            { haplogroup: 'Q', multiplier: 4 },
+            { haplogroup: 'E', multiplier: 3 },
         ]
     },
 ]
