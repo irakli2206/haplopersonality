@@ -31,6 +31,6 @@ export const appSlice = createSlice({
     },
 })
 
-export const { chooseAnswer } = appSlice.actions
+export const { chooseAnswer, reset } = appSlice.actions
 
 export default appSlice.reducer

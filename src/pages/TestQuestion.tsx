@@ -1,15 +1,19 @@
 import { ButtonGroup, Button, IconButton, Center, Text, Stack } from '@chakra-ui/react'
 import React, { useEffect, useState } from 'react'
-import { useSearchParams } from 'react-router-dom'
+import { useSearchParams, useNavigate } from 'react-router-dom'
 import { questions } from '../data/questions';
 import { RootState } from '../store/store';
 import { useDispatch, useSelector } from 'react-redux';
 import { chooseAnswer } from '../store/appSlice';
 import { Answer } from '../types';
+import { useToast } from '@chakra-ui/react'
+
 
 const TestQuestion = () => {
   let [searchParams, setSearchParams] = useSearchParams();
+  const navigate = useNavigate()
   const [chosenAnswer, setChosenAnswer] = useState<Answer | null>(null)
+  const toast = useToast()
 
 
   let questionNumber = searchParams.get('question') as string
@@ -35,10 +39,21 @@ const TestQuestion = () => {
   }
 
   const gotoNextQuestion = () => {
+    if (!chosenAnswer) {
+      toast({
+        title: 'Choose an answer first!',
+        // description: "We've created your account for you.",
+        status: 'error',
+        duration: 3000,
+        isClosable: true,
+      })
+      return
+    }
+
     if (+questionNumber != questions.length) {
       setSearchParams({ question: String(+questionNumber + 1) })
     }
-    else console.log('End reached')
+    else navigate('/result')
   }
 
   useEffect(() => {
@@ -53,7 +68,7 @@ const TestQuestion = () => {
     <Center h='100vh' w='full'>
       <Stack alignItems='center' gap={24}>
         <Text fontSize='4xl'>{question.question}</Text>
-        <ButtonGroup size='lg' isAttached variant='outline' bg='white'>
+        <ButtonGroup size='lg' isAttached variant='outline' bg='white' rounded={'lg'} shadow={'lg'}>
           {[...Array(5).keys()].map((e: number) => {
             const buttonValue = e + 1
             return <Button onClick={() => onAnswer(buttonValue as Answer)}
@@ -62,7 +77,7 @@ const TestQuestion = () => {
           })}
 
         </ButtonGroup>
-        <ButtonGroup size='lg' isAttached variant='outline' bg='white'>
+        <ButtonGroup size='lg' isAttached variant='outline' bg='white' mt={24}>
           <Button onClick={gotoPrevQuestion}>Previous</Button>
           <Button onClick={gotoNextQuestion}>Next</Button>
         </ButtonGroup>

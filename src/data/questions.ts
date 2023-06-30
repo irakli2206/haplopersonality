@@ -3,7 +3,7 @@ import { HaplogroupWithMulitplier, QuizQuestion } from "../types";
 //
 export const questions: QuizQuestion[] = [
     {
-        question: 'Is it justified to hit a woman?',
+        question: 'Is it ever justified to hit a woman?',
         haplogroups: [
             { haplogroup: 'J1', multiplier: 5 },
             { haplogroup: 'J2', multiplier: 4 },
@@ -19,9 +19,9 @@ export const questions: QuizQuestion[] = [
     {
         question: 'Do you see any point to hiking in nature?',
         haplogroups: [
-            { haplogroup: 'J1', multiplier: 4 },
+            { haplogroup: 'J1', multiplier: 2 },
             { haplogroup: 'J2', multiplier: 3 },
-            { haplogroup: 'I2', multiplier: 4 },
+            { haplogroup: 'I2', multiplier: 3.5 },
             { haplogroup: 'I1', multiplier: 5 },
             { haplogroup: 'R1b', multiplier: 4.5 },
             { haplogroup: 'R1a', multiplier: 3.5 },

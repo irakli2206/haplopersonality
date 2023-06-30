@@ -7,6 +7,7 @@ import { RouterProvider, createBrowserRouter } from 'react-router-dom'
 import Test from './pages/TestQuestion.tsx'
 import { Provider } from 'react-redux'
 import { store } from './store/store'
+import Result from './pages/Result.tsx'
 
 
 const router = createBrowserRouter([
@@ -17,6 +18,10 @@ const router = createBrowserRouter([
   {
     path: "/test",
     element: <Test />,
+  },
+  {
+    path: "/result",
+    element: <Result />,
   },
 ]);
 
