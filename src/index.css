@@ -1,0 +1,28 @@
+:root {
+  line-height: 1.5;
+  font-weight: 400;
+
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-text-size-adjust: 100%;
+
+
+}
+
+body {
+  background-color: white !important;
+  opacity: 0.8 !important;
+  background-image: linear-gradient(whitesmoke 2px, transparent 2px), linear-gradient(90deg, whitesmoke 2px, transparent 2px), linear-gradient(whitesmoke 1px, transparent 1px), linear-gradient(90deg, whitesmoke 1px, white 1px), radial-gradient(circle at 100%, #333, #333 50%, #eee 75%, #333 75%) !important; 
+  background-size: 250px 250px, 250px 250px, 50px 50px, 50px 50px !important;
+  background-position: -2px -2px, -2px -2px, -1px -1px, -1px -1px !important;
+}
+
+* {
+  box-sizing: border-box;
+  font-family: Poppins;
+}
+
+.background {}
