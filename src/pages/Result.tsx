@@ -1,6 +1,6 @@
 import { Button, Center, Stack, Text } from '@chakra-ui/react'
 import React from 'react'
-import { calculateResult } from '../util'
+import { calculateMultipliers, calculateResult } from '../util'
 import { RootState } from '../store/store'
 import { useDispatch, useSelector } from 'react-redux'
 import { ResponsiveContainer, BarChart, CartesianGrid, XAxis, YAxis, Legend, Bar, Tooltip } from 'recharts'
@@ -22,6 +22,7 @@ const Result = () => {
         dispatch(reset())
         navigate('/')
     }
+
 
     return (
         <Center minH='100vh' w='full'>

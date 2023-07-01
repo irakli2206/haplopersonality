@@ -2,10 +2,13 @@ import { useState } from 'react'
 import reactLogo from './assets/react.svg'
 import { Box, Button, Center, Link, Stack, Text } from '@chakra-ui/react'
 import { Link as RouterLink } from 'react-router-dom'
+import { calculateMultipliers } from './util'
 
 
 function App() {
   const [count, setCount] = useState(0)
+
+  console.log(calculateMultipliers())
 
   return (
     <>
